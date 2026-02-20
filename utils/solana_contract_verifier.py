@@ -69,7 +69,7 @@ def smart_updata():
     combined_recent_active_wallets = list(set(recent_active_wallets1 + recent_active_wallets2))
     
     # 将结果写入文件
-    with open('../Data/Smart_wallets.txt', 'w', encoding='utf-8') as file:
+    with open('../data/smart_wallets.txt', 'w', encoding='utf-8') as file:
         for item in combined_recent_active_wallets:
             file.write(item + '\n')
     

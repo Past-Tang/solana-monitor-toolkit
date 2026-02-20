@@ -9,13 +9,13 @@ import time  # 时间相关的功能，如延时和睡眠
 # 导入线程池模块，用于高效管理多个并发任务
 from concurrent.futures import ThreadPoolExecutor, as_completed  # 线程池管理
 # 从钱包监控模块导入数据获取函数
-from run.Wallet_monitoring import fetch_data  # 导入钱包数据获取函数
+from run.solana_transaction_monitor import fetch_data  # 导入钱包数据获取函数
 # 从Telegram机器人模块导入BOT类
-from Utils.TeleBot import BOT  # 导入Telegram机器人实例化方法
+from utils.solana_telegram_bot import BOT  # 导入Telegram机器人实例化方法
 # 导入日期时间模块，用于时间计算和格式化
 from datetime import datetime, timedelta, timezone
 # 导入价格格式化工具
-from Utils import format_price
+from utils import solana_price_formatter as format_price
 # 初始化Telegram机器人实例，用于发送通知
 Tgbot = BOT()
 
@@ -26,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 def get_wallets():
     """从Smart_wallets.txt文件中读取钱包地址"""
     # 使用with语句确保文件正确打开和关闭
-    with open(os.path.join(BASE_DIR, 'Data', 'Smart_wallets.txt'), 'r') as file:
+    with open(os.path.join(BASE_DIR, 'data', 'smart_wallets.txt'), 'r') as file:
         # 读取所有行，去除每行首尾空白字符后存储为列表并返回
         wallets = [line.strip() for line in file.readlines()]
     return wallets

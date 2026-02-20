@@ -5,7 +5,7 @@ Solana钱包活动监控器 - 通过GMGN API实时获取并分析钱包交易数
 # 导入requests库用于HTTP请求
 import requests
 # 从Utils包导入tokensmart模块
-from Utils import tokensmart
+from utils import solana_token_handler as tokensmart
 
 def fetch_data(address):
     """获取指定钱包地址的交易数据"""

@@ -66,11 +66,11 @@ Solana Monitor Toolkit 是一个基于 GMGN API 的 Solana 链上聪明钱（Sma
    ```
 
 3. 配置 Telegram Bot Token：
-   编辑 `Utils/solana_telegram_bot.py` 中的 `BOT_TOKEN`
+   编辑 `utils/solana_telegram_bot.py` 中的 `BOT_TOKEN`
 
 4. 更新聪明钱钱包列表：
    ```bash
-   python Utils/solana_contract_verifier.py
+   python utils/solana_contract_verifier.py
    ```
 
 ## 使用方法
@@ -82,7 +82,7 @@ python solana_monitor_main.py
 
 ### 更新聪明钱钱包地址
 ```bash
-python Utils/solana_contract_verifier.py
+python utils/solana_contract_verifier.py
 ```
 
 ### 启动 Binance 技术指标监控
@@ -98,12 +98,12 @@ solana-monitor-toolkit/
 ├── solana_wallet_generator.py            # Binance 技术指标监控（88行）：布林带 + RSI
 ├── run/
 │   └── solana_transaction_monitor.py     # 钱包交易数据获取（46行）
-├── Utils/
+├── utils/
 │   ├── solana_contract_verifier.py       # 聪明钱钱包地址更新（82行）
 │   ├── solana_telegram_bot.py            # Telegram Bot 预警推送（91行）
 │   ├── solana_token_handler.py           # 代币聪明钱计数（33行）
 │   └── solana_price_formatter.py         # 价格格式化工具（45行）
-├── Data/
+├── data/
 │   └── smart_wallets.txt                 # 聪明钱钱包地址列表
 ├── assets/
 │   └── logo.svg                          # 项目 Logo
@@ -118,7 +118,7 @@ solana-monitor-toolkit/
 GMGN API (smart_degen + pump_smart 排名)
   -> 筛选 24h 内活跃钱包
   -> 合并去重
-  -> 写入 Data/smart_wallets.txt
+  -> 写入 data/smart_wallets.txt
 
 [实时监控]
 读取 smart_wallets.txt
@@ -161,7 +161,7 @@ GMGN 可能有反爬机制，系统使用模拟 Googlebot User-Agent。如果频
 检查 Bot Token 是否正确，确保 Bot 已被添加到目标频道并具有发送消息权限。
 
 ### 聪明钱钱包列表为空？
-运行 `python Utils/solana_contract_verifier.py` 更新钱包列表。确保网络可以访问 GMGN API。
+运行 `python utils/solana_contract_verifier.py` 更新钱包列表。确保网络可以访问 GMGN API。
 
 ## 安全注意事项
 
